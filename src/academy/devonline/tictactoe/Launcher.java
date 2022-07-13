@@ -17,7 +17,7 @@
 package academy.devonline.tictactoe;
 
 /**
- * @auhtor devonlain
+ * @author devonlain
  * @link
  */
 public class Launcher {
