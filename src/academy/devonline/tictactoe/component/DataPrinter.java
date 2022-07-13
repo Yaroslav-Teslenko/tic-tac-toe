@@ -14,13 +14,19 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe;
+package academy.devonline.tictactoe.component;
+
+import academy.devonline.tictactoe.model.GameTable;
 
 /**
  * @author devonlain
  * @link
  */
-public class UserMove {
-    public void make() {
+public class DataPrinter {
+    public void printMappingTable(GameTable gameTable) {
+    }
+
+    public void printGameTable(GameTable gameTable) {
     }
 }
+

@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe;
+package academy.devonline.tictactoe.model;
 
 /**
  * @author devonlain
  * @link
  */
-public class drawVerifier {
-    public boolean isDraw(GameTable gameTable) {
-        return false;
-    }
+public class GameTable {
 }

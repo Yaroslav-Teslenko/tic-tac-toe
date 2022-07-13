@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package academy.devonline.tictactoe;
+package academy.devonline.tictactoe.component;
 
 /**
  * @author devonlain
  * @link
  */
-public class ComputerMove {
-    public void make(GameTable gameTable) {
+public class UserMove {
+    public void make() {
     }
 }

@@ -16,6 +16,8 @@
 
 package academy.devonline.tictactoe;
 
+import academy.devonline.tictactoe.component.*;
+
 /**
  * @author devonlain
  * @link
