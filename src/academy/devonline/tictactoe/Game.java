@@ -15,40 +15,57 @@
  */
 
 package academy.devonline.tictactoe;
-
 import java.util.Random;
 
 /**
  * @author devonlain
  * @link
  */
-public class Came {
+public class Game {
+    private final DataPrinter dataPrinter;
+    private final WinnerVerifier winnerVerifier;
+    private final ComputerMove computerMove;
+    private final UserMove userMove;
+    private final drawVerifier drawVerifier;
+
+    public Game(final DataPrinter dataPrinter,
+                final ComputerMove computerMove,
+                final UserMove userMove,
+                final WinnerVerifier winnerVerifie,
+                final drawVerifier drawVerifier) {
+        this.computerMove = computerMove;
+        this.dataPrinter = dataPrinter;
+        this.winnerVerifier = winnerVerifie;
+        this.userMove = userMove;
+        this.drawVerifier = drawVerifier;
+    }
+
     public void play() {
         System.out.println("используй клаву");
-        GameTable gameTable = new GameTable();
-        dataPrinter.printMappingTable();
+        final GameTable gameTable = new GameTable();
+        dataPrinter.printMappingTable(gameTable);
         if (new Random().nextBoolean()) {
-            computerMove.make();
-            dataPrinter.printGameTable();
+            computerMove.make(gameTable);
+            dataPrinter.printGameTable(gameTable);
         }
         while (true) {
             userMove.make();
-            dataPrinter.printGameTable();
-            if (winnerVerifie.isUserWin()) {
+            dataPrinter.printGameTable(gameTable);
+            if (winnerVerifier.isUserWin(gameTable)) {
                 System.out.println("you win");
                 break;
             }
-            if (winnerVerifie.isDraw()) {
+            if (drawVerifier.isDraw(gameTable)) {
                 System.out.println("draw ");
                 break;
             }
-            computeMove.make();
-            dataPrinter.printGameTable();
-            if (winnerVerifie.isComputerWin()) {
+            computerMove.make(gameTable);
+            dataPrinter.printGameTable(gameTable);
+            if (winnerVerifier.isComputerWin(gameTable)) {
                 System.out.println("you win");
                 break;
             }
-            if (winnerVerifie.isDraw()) {
+            if (drawVerifier.isDraw(gameTable)) {
                 System.out.println("draw ");
                 break;
             }
