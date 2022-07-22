@@ -47,32 +47,33 @@ public class Game {
         System.out.println("используй клаву");
         final GameTable gameTable = new GameTable();
         dataPrinter.printMappingTable(gameTable);
+        dataPrinter.printGameTable(gameTable);
         if (new Random().nextBoolean()) {
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
         }
-        while (true) {
-            userMove.make();
-            dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isUserWin(gameTable)) {
-                System.out.println("you win");
-                break;
-            }
-            if (drawVerifier.isDraw(gameTable)) {
-                System.out.println("draw ");
-                break;
-            }
-            computerMove.make(gameTable);
-            dataPrinter.printGameTable(gameTable);
-            if (winnerVerifier.isComputerWin(gameTable)) {
-                System.out.println("you win");
-                break;
-            }
-            if (drawVerifier.isDraw(gameTable)) {
-                System.out.println("draw ");
-                break;
-            }
-        }
+//        while (false) {
+//            userMove.make();
+//            dataPrinter.printGameTable(gameTable);
+//            if (winnerVerifier.isUserWin(gameTable)) {
+//                System.out.println("you win");
+//                break;
+//            }
+//            if (drawVerifier.isDraw(gameTable)) {
+//                System.out.println("draw ");
+//                break;
+//            }
+//            computerMove.make(gameTable);
+//            dataPrinter.printGameTable(gameTable);
+//            if (winnerVerifier.isComputerWin(gameTable)) {
+//                System.out.println("you win");
+//                break;
+//            }
+//            if (drawVerifier.isDraw(gameTable)) {
+//                System.out.println("draw ");
+//                break;
+//            }
+//        }
         System.out.println("game over");
 
     }

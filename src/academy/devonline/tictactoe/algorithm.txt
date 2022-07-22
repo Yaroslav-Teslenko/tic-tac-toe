@@ -22,6 +22,6 @@
 Game алгоритм игры
 DataPrinter отображение текыюих данных игры
 UserMove ход п
-WinnerVerificator проверает на выыгрыш
+WinnerVerifier  проверает на выыгрыш
 DrawVerifier  - проверяет на ничью
 ComputerMove - ход к
