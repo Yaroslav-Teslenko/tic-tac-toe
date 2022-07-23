@@ -16,7 +16,10 @@
 
 package academy.devonline.tictactoe.component;
 
+import academy.devonline.tictactoe.model.Cell;
 import academy.devonline.tictactoe.model.GameTable;
+
+import java.util.Random;
 
 /**
  * @author devonlain
@@ -24,5 +27,25 @@ import academy.devonline.tictactoe.model.GameTable;
  */
 public class ComputerMove {
     public void make(GameTable gameTable) {
+
+        while (true) {
+            Cell newCell = new Cell(new Random().nextInt(3), new Random().nextInt(3));
+            if (gameTable.isEmpty(newCell)) {
+                gameTable.setSign(newCell, '0');
+                return;
+            }
+        }
+        // by course
+       /*
+        final Random random = new Random();
+        while (true) {
+            final int row = random.nextInt(3);
+            final int col = random.nextInt(3);
+            final Cell randomCell = new Cell(row, col);
+            if (gameTable.isEmpty(randomCell)) {
+                gameTable.setSign(randomCell, '0');
+                return;
+            }
+        }*/
     }
 }
