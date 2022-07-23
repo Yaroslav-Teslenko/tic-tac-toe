@@ -18,6 +18,8 @@ package academy.devonline.tictactoe.component;
 
 import academy.devonline.tictactoe.model.GameTable;
 
+import java.util.Random;
+
 /**
  * @author devonlain
  * @link
@@ -32,11 +34,11 @@ public class Game {
     public Game(final DataPrinter dataPrinter,
                 final ComputerMove computerMove,
                 final UserMove userMove,
-                final WinnerVerifier winnerVerifie,
+                final WinnerVerifier winnerVerifier,
                 final drawVerifier drawVerifier) {
         this.computerMove = computerMove;
         this.dataPrinter = dataPrinter;
-        this.winnerVerifier = winnerVerifie;
+        this.winnerVerifier = winnerVerifier;
         this.userMove = userMove;
         this.drawVerifier = drawVerifier;
     }
@@ -46,12 +48,12 @@ public class Game {
         final GameTable gameTable = new GameTable();
         dataPrinter.printMappingTable(gameTable);
 
-        // if (new Random().nextBoolean()) {
-        computerMove.make(gameTable);
-        dataPrinter.printGameTable(gameTable);
-        // }
+        if (new Random().nextBoolean()) {
+            computerMove.make(gameTable);
+            dataPrinter.printGameTable(gameTable);
+        }
         while (true) {
-            userMove.make();
+            userMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
             if (winnerVerifier.isUserWin(gameTable)) {
                 System.out.println("you win");
