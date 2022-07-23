@@ -24,32 +24,22 @@ import academy.devonline.tictactoe.model.GameTable;
  * @link
  */
 public class DataPrinter {
-    public void printMappingTable(GameTable gameTable) {
-        System.out.println("-------------");
-        System.out.println("| 7 | 8 | 9 |");
-        System.out.println("-------------");
-        System.out.println("| 4 | 5 | 6 |");
-        System.out.println("-------------");
-        System.out.println("| 1 | 2 | 3 |");
-        System.out.println("-------------");
+    private final CellNumberConverter cellNumberConverter;
+
+    public DataPrinter(CellNumberConverter cellNumberConverter) {
+        this.cellNumberConverter = cellNumberConverter;
     }
 
-/*    моя реализация
-   public void printGameTable(GameTable gameTable) {
-        System.out.println("-------------");
-        for (int i = 0; i <3; i++) {
-            printRow(gameTable, i);
+    public void printMappingTable(GameTable gameTable) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("-------------");
+            for (int j = 0; j < 3; j++) {
+                System.out.print("| " + cellNumberConverter.toNumber(new Cell(i, j)) + " ");
+            }
+            System.out.println("|");
         }
+        System.out.println("-------------");
     }
-    private void printRow(GameTable gameTable, int i){
-        for (int j = 0; j < 3; j++) {
-            System.out.print("| ");
-            System.out.print(gameTable.getSign(new Cell(i,j)));
-            System.out.print(" ");
-        }
-        System.out.println("|");
-        System.out.println("-------------");
-    }*/
 
     public void printGameTable(GameTable gameTable) {
         for (int i = 0; i < 3; i++) {
