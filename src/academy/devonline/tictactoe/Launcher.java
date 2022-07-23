@@ -28,7 +28,7 @@ public final class Launcher {
                 new ComputerMove(),
                 new UserMove(),
                 new WinnerVerifier(),
-                new drawVerifier());
+                new CellVerifier());
         game.play();
     }
 }
